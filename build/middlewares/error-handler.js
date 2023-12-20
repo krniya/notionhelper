@@ -10,9 +10,11 @@ const errorHandler = (err, req, res, next) => {
     }
     //* General error when its not been handled
     res.status(400).send({
-        errors: [{
-                message: "Something went wrong"
-            }]
+        errors: [
+            {
+                message: `Error: ${err}`,
+            },
+        ],
     });
 };
 exports.errorHandler = errorHandler;
